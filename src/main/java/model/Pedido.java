@@ -16,6 +16,13 @@ public class Pedido {
 	private EstadoPedido estadoPedido;
 	private double total;
 
+	public Pedido(int id, List<ItemPedido> items, double total) {
+		super();
+		this.id = id;
+		this.items = items;
+		this.total = total;
+	}
+
 	public int getId() {
 		return id;
 	}
@@ -55,10 +62,10 @@ public class Pedido {
 	public void setTotal(double total) {
 		this.total = total;
 	}
-	
+
 	public void procesarPedido(double monto) {
 		pagosStrategy.pagar(monto);
 		enviosStrategy.enviar(this);
-    }
+	}
 
 }

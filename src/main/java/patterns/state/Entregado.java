@@ -1,7 +1,7 @@
 package patterns.state;
 
 import model.Pedido;
-
+//estado de pedido
 public class Entregado implements EstadoPedido{
 
 	@Override

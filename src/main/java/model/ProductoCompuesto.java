@@ -63,4 +63,9 @@ public class ProductoCompuesto implements Producto {
         }
     }
 
+	@Override
+	public void setStock(int nuevoStock) {
+		this.stock = nuevoStock;
+	}
+
 }

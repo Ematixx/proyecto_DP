@@ -1,5 +1,5 @@
 package patterns.strategy;
-
+//tipo de pago
 public class PagoEnEfectivo implements PagosStrategy{
 
 	@Override

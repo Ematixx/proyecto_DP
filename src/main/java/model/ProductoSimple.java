@@ -49,4 +49,9 @@ public class ProductoSimple implements Producto {
 		return this.precio * this.stock;
 	}
 
+	@Override
+	public void setStock(int nuevoStock) {
+		this.stock = nuevoStock;
+	}
+	
 }

@@ -1,7 +1,7 @@
 package patterns.strategy;
 
 import model.Pedido;
-
+//tipo de envio
 public class EnvioEstandar implements EnviosStrategy{
 
 	@Override
