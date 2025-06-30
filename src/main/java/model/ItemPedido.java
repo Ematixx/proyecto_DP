@@ -2,14 +2,14 @@ package model;
 
 public class ItemPedido {
 
-	private Producto producto;
+	private ProductoSimple producto;
 	private int cantidad;
 
-	public Producto getProducto() {
+	public ProductoSimple getProducto() {
 		return producto;
 	}
 
-	public void setProducto(Producto producto) {
+	public void setProducto(ProductoSimple producto) {
 		this.producto = producto;
 	}
 

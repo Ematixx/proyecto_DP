@@ -2,13 +2,17 @@ package model;
 
 import java.util.List;
 
+import patterns.state.EstadoPedido;
+import patterns.strategy.EnviosStrategy;
+import patterns.strategy.PagosStrategy;
+
 public class Pedido {
 
 	private int id;
 	private Cliente cliente;
 	private List<ItemPedido> items;
-	private MetodoPagoFactory metodoPagoFactory;
-	private MetodoEnvioFactory metodoEnvioFactory;
+	private PagosStrategy pagosStrategy;
+	private EnviosStrategy enviosStrategy;
 	private EstadoPedido estadoPedido;
 	private double total;
 
@@ -36,22 +40,6 @@ public class Pedido {
 		this.items = items;
 	}
 
-	public MetodoPagoFactory getMetodoPagoFactory() {
-		return metodoPagoFactory;
-	}
-
-	public void setMetodoPagoFactory(MetodoPagoFactory metodoPagoFactory) {
-		this.metodoPagoFactory = metodoPagoFactory;
-	}
-
-	public MetodoEnvioFactory getMetodoEnvioFactory() {
-		return metodoEnvioFactory;
-	}
-
-	public void setMetodoEnvioFactory(MetodoEnvioFactory metodoEnvioFactory) {
-		this.metodoEnvioFactory = metodoEnvioFactory;
-	}
-
 	public EstadoPedido getEstadoPedido() {
 		return estadoPedido;
 	}
@@ -67,5 +55,10 @@ public class Pedido {
 	public void setTotal(double total) {
 		this.total = total;
 	}
+	
+	public void procesarPedido(double monto) {
+		pagosStrategy.pagar(monto);
+		enviosStrategy.enviar(this);
+    }
 
 }
