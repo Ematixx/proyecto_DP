@@ -2,11 +2,13 @@ package patterns.facade;
 
 import java.util.List;
 
+import model.Cliente;
 import model.ItemPedido;
 import model.Pedido;
 import patterns.composite.Producto;
 import patterns.observer.Notificador;
 import patterns.observer.NotificadorImpl;
+import patterns.state.Pendiente;
 import service.PedidoService;
 import service.PedidoServiceImpl;
 import service.PrecioService;
@@ -19,7 +21,7 @@ public class PedidoFacade {
 	private PrecioService precioService = new PrecioServiceImpl();
 	private Notificador notificador = new NotificadorImpl();
 	
-	public void crearPedido(int clienteId, List<ItemPedido> items) {
+	public Pedido crearPedido(Cliente cliente, List<ItemPedido> items) {
        
 		//validar stock
 		for (ItemPedido item : items) {
@@ -40,10 +42,20 @@ public class PedidoFacade {
         }
 
         double total = precioService.calcularTotal(items);
-        Pedido pedido = pedidoService.crearPedido(clienteId, items, total);
+        Pedido pedido = pedidoService.crearPedido(cliente, items, total, new Pendiente());
         notificador.notificar(pedido);
 
         System.out.println("Pedido creado correctamente");
+        
+        return pedido;
     }
+
+	public Notificador getNotificador() {
+		return notificador;
+	}
+
+	public void setNotificador(Notificador notificador) {
+		this.notificador = notificador;
+	}
 	
 }

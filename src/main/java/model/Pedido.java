@@ -16,11 +16,12 @@ public class Pedido {
 	private EstadoPedido estadoPedido;
 	private double total;
 
-	public Pedido(int id, List<ItemPedido> items, double total) {
+	public Pedido(Cliente cliente, List<ItemPedido> items, double total, EstadoPedido estadoPedido) {
 		super();
-		this.id = id;
+		this.cliente = cliente;
 		this.items = items;
 		this.total = total;
+		this.estadoPedido = estadoPedido;
 	}
 
 	public int getId() {

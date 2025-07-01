@@ -1,10 +1,19 @@
 package model;
 
+import patterns.composite.Producto;
+
 public class ItemPedido {
 	
 	private int id;
-	private ProductoSimple producto;
+	private Producto producto;
 	private int cantidad;
+	
+	public ItemPedido(int id, Producto producto, int cantidad) {
+		super();
+		this.id = id;
+		this.producto = producto;
+		this.cantidad = cantidad;
+	}
 
 	public int getId() {
 		return id;
@@ -14,11 +23,11 @@ public class ItemPedido {
 		this.id = id;
 	}
 
-	public ProductoSimple getProducto() {
+	public Producto getProducto() {
 		return producto;
 	}
 
-	public void setProducto(ProductoSimple producto) {
+	public void setProducto(Producto producto) {
 		this.producto = producto;
 	}
 
