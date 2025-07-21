@@ -21,12 +21,9 @@ public class ProductoSimple implements Producto {
 		this.categoria = categoria;
 	}
 
+	@Override
 	public int getId() {
 		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
 	}
 
 	@Override
@@ -53,5 +50,29 @@ public class ProductoSimple implements Producto {
 	public void setStock(int nuevoStock) {
 		this.stock = nuevoStock;
 	}
-	
+
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public void setPrecio(double precio) {
+		this.precio = precio;
+	}
+
+	public Categoria getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
+	}
+
 }

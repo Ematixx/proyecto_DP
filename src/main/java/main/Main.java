@@ -21,6 +21,10 @@ import patterns.observer.NotificadorImpl;
 import patterns.observer.SMSNotificacion;
 import patterns.strategy.EnviosStrategy;
 import patterns.strategy.PagosStrategy;
+import service.CategoriaService;
+import service.CategoriaServiceImpl;
+import service.ClienteService;
+import service.ClienteServiceImpl;
 
 public class Main {
 
@@ -30,8 +34,16 @@ public class Main {
 		System.out.println("Sistema de inventario");
 		System.out.println("---------------------------");
 		
+		//instanciamos los servicios
+		CategoriaService categoriaService = new CategoriaServiceImpl();
+		ClienteService clienteService = new ClienteServiceImpl();
+		
 		//creamos la categoria
-		Categoria categoriaGamer = new Categoria(1, "Gamer");
+		//Categoria categoriaGamer = new Categoria(0, "Normales");
+		//categoriaService.save(categoriaGamer);
+		
+		//buscamos la categoria, gamer
+		Categoria categoriaGamer = categoriaService.findById(1); 
 		
 		//creamos los productos simples
 		Producto simple1 = new ProductoSimple(1, "Teclado", "Teclado Gamer", 50.0, 10, categoriaGamer);
@@ -43,7 +55,11 @@ public class Main {
         combo.agregarProducto(simple2);
         
         //creamos el cliente
-        Cliente cliente = new Cliente(1, "Juan Pérez", "juan@gmail.com");
+        //Cliente cliente = new Cliente(0, "Juan Pérez", "juan@gmail.com");
+        //clienteService.save(cliente);
+        
+        //buscamos al cliente
+        Cliente cliente = clienteService.findById(1);
         
         //creamos los items de pedido
         List<ItemPedido> items = new ArrayList<>();

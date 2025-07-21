@@ -15,6 +15,9 @@ public class Pedido {
 	private EnviosStrategy enviosStrategy;
 	private EstadoPedido estadoPedido;
 	private double total;
+	private String pagoTipo;
+	private String envioTipo;
+	private String estado;
 
 	public Pedido(Cliente cliente, List<ItemPedido> items, double total, EstadoPedido estadoPedido) {
 		super();
@@ -22,6 +25,26 @@ public class Pedido {
 		this.items = items;
 		this.total = total;
 		this.estadoPedido = estadoPedido;
+	}
+
+	public Pedido(int id, Cliente cliente, List<ItemPedido> items, double total, String pagoTipo, String envioTipo,
+			String estado) {
+		super();
+		this.id = id;
+		this.cliente = cliente;
+		this.items = items;
+		this.total = total;
+		this.pagoTipo = pagoTipo;
+		this.envioTipo = envioTipo;
+		this.estado = estado;
+	}
+
+	public String getEstado() {
+		return estado;
+	}
+
+	public void setEstado(String estado) {
+		this.estado = estado;
 	}
 
 	public int getId() {
@@ -67,6 +90,38 @@ public class Pedido {
 	public void procesarPedido(double monto) {
 		pagosStrategy.pagar(monto);
 		enviosStrategy.enviar(this);
+	}
+
+	public PagosStrategy getPagosStrategy() {
+		return pagosStrategy;
+	}
+
+	public void setPagosStrategy(PagosStrategy pagosStrategy) {
+		this.pagosStrategy = pagosStrategy;
+	}
+
+	public EnviosStrategy getEnviosStrategy() {
+		return enviosStrategy;
+	}
+
+	public void setEnviosStrategy(EnviosStrategy enviosStrategy) {
+		this.enviosStrategy = enviosStrategy;
+	}
+
+	public String getPagoTipo() {
+		return pagoTipo;
+	}
+
+	public void setPagoTipo(String pagoTipo) {
+		this.pagoTipo = pagoTipo;
+	}
+
+	public String getEnvioTipo() {
+		return envioTipo;
+	}
+
+	public void setEnvioTipo(String envioTipo) {
+		this.envioTipo = envioTipo;
 	}
 
 }

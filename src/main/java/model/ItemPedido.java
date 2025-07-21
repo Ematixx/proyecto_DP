@@ -8,6 +8,10 @@ public class ItemPedido {
 	private Producto producto;
 	private int cantidad;
 	
+	public ItemPedido() {
+		super();
+	}
+
 	public ItemPedido(int id, Producto producto, int cantidad) {
 		super();
 		this.id = id;

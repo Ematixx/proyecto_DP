@@ -4,4 +4,5 @@ package patterns.strategy;
 public interface PagosStrategy {
 	//ejecuta el pago del monto
 	void pagar(double monto);
+	String getNombre();
 }

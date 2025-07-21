@@ -7,4 +7,9 @@ public class PagoEnEfectivo implements PagosStrategy{
 		System.out.println("Pagando S/." + monto + " con efectivo.");
 	}
 
+	@Override
+	public String getNombre() {
+		return "EFECTIVO";
+	}
+
 }

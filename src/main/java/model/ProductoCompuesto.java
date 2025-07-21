@@ -68,4 +68,10 @@ public class ProductoCompuesto implements Producto {
 		this.stock = nuevoStock;
 	}
 
+	@Override
+	public int getId() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 }

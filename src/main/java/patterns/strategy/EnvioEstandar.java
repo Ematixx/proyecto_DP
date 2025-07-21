@@ -9,4 +9,9 @@ public class EnvioEstandar implements EnviosStrategy{
 		System.out.println("Enviando el pedido numero " + pedido.getId() + " por correo estandar.");
 	}
 
+	@Override
+	public String getNombre() {
+		return "ESTANDAR";
+	}
+
 }

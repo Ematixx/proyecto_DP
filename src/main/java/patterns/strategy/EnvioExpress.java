@@ -9,4 +9,9 @@ public class EnvioExpress implements EnviosStrategy{
 		System.out.println("Enviando el pedido numero " + pedido.getId() + " por entrega expres.");
 	}
 
+	@Override
+	public String getNombre() {
+		return "EXPRESS";
+	}
+
 }

@@ -1,0 +1,36 @@
+CREATE TABLE categorias (
+    id_categoria INT AUTO_INCREMENT PRIMARY KEY,
+    descripcion VARCHAR(50) NOT NULL
+);
+CREATE TABLE clientes (
+    id_cliente INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(30) NOT NULL,
+    email VARCHAR(30) NOT NULL
+);
+CREATE TABLE productos (
+    id_producto INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(30) NOT NULL,
+    descripcion VARCHAR(50) NOT NULL,
+    precio DECIMAL(10, 2) NOT NULL,
+    stock INT NOT NULL,
+    id_categoria INT,
+    tipo INT COMMENT '1 = SIMPLE, 2 = COMPUESTO',
+    FOREIGN KEY (id_categoria) REFERENCES categorias(id_categoria)
+);
+CREATE TABLE pedido (
+    id_pedido INT AUTO_INCREMENT PRIMARY KEY,
+    id_cliente INT,
+    estado INT,
+    total DECIMAL(10,2),
+    pago_tipo INT, 
+    envio_tipo INT,
+    FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente)
+);
+CREATE TABLE item_pedido (
+    id_item_pedido INT AUTO_INCREMENT PRIMARY KEY,
+    cantidad INT NOT NULL,
+    id_pedido INT,
+    id_producto INT,
+    FOREIGN KEY (id_pedido) REFERENCES pedido(id_pedido),
+    FOREIGN KEY (id_producto) REFERENCES productos(id_producto)
+);

@@ -7,4 +7,9 @@ public class PagoConTarjeta implements PagosStrategy{
 		System.out.println("Pagando S/." + monto + " con tarjeta de credito.");
 	}
 
+	@Override
+	public String getNombre() {
+		return "TARJETA";
+	}
+
 }

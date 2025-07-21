@@ -6,4 +6,5 @@ import model.Pedido;
 public interface EnviosStrategy {
 	//ejecuta el proceso de envio
 	void enviar(Pedido pedido);
+	String getNombre();
 }
