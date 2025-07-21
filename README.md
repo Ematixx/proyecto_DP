@@ -36,3 +36,6 @@ Este es un sistema de inventario desarrollado en Java, como parte del curso de *
   Las clases dependen de abstracciones y no de implementaciones concretas, facilitando la flexibilidad y testeo.  
   Ejemplo: `PedidoFacade` depende de interfaces como `PedidoService`, `PrecioService` y `Notificador`, y no de sus implementaciones directas. Se recomienda usar inyección de dependencias para mejorar aún más este principio.
 
+## 🛢️ Diagrama Entidad Relacion
+
+![diagrama](db_inventory.png)
