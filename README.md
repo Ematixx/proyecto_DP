@@ -12,6 +12,7 @@ Este es un sistema de inventario desarrollado en Java, como parte del curso de *
 | **Observer**         | Implementa las notificaciones por consola, email y SMS                        |
 | **Composite**        | Define el comportamiento común para todos los productos, simples o compuestos |
 | **Strategy**         | Se utilizo este patron para representar el metodo de pago y envio             |
+| **Singleton**        | Controla una única instancia de la clase `ConnectionDB`.                      |
 
 ## 🧾 Principios SOLID Aplicados en el Proyecto
 
